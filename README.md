@@ -11,13 +11,14 @@ First of all, by using `pyenv`, install a new Python interpreter which is going 
 
 ```
 # install the base
-pyenv install 3.11.9
+pyenv install 3.11.4
 ```
 
 ### virtual environment
 Install the new Python virtual environment and all the packages specified as dependencies of this project (see `pyproject.toml`). Notice how `poetry` is going to create the new Python virtual environment in the `.venv` directory.
 
 ```
+poetry self update
 poetry install
 ```
 
@@ -25,8 +26,12 @@ poetry install
 Install the EvCxR Jupyter kernel, and test if it works.
 
 ```
-poetry shell
+rustup update stable
 cargo install --locked evcxr_jupyter
+```
+
+```
+poetry shell
 evcxr_jupyter --install
 jupyter lab
 ```
